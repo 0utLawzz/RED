@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-bg: #0c0a09;
+  --color-surface: #161210;
+  --color-surface-2: #1f1916;
+  --color-fg: #f4efe8;
+  --color-muted: #9a9088;
+  --color-subtle: #6e6660;
+  --color-accent: #c44536;
+  --color-accent-hover: #d45444;
+  --color-accent-fg: #fff8f5;
+  --color-border: #2c2622;
+  --color-wave: #c44536;
+  --color-wave-dim: #5c2a24;
+  --color-ok: #7d9a6a;
+
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius: 12px;
+
+  --shadow-border: 0 0 0 1px rgba(244, 239, 232, 0.08);
+  --shadow-border-hover: 0 0 0 1px rgba(244, 239, 232, 0.14);
+  --shadow-lift: 0 16px 40px -24px rgba(0, 0, 0, 0.7);
+
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100dvh;
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-accent-fg);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes red-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes red-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes red-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.red-spin {
+  animation: red-spin 12s linear infinite;
+}
+
+.red-rise {
+  animation: red-rise 400ms var(--ease-smooth-out) both;
+}
+
+.red-rise-2 {
+  animation: red-rise 400ms var(--ease-smooth-out) 80ms both;
+}
+
+.red-rise-3 {
+  animation: red-rise 400ms var(--ease-smooth-out) 140ms both;
+}
+
+.red-rise-4 {
+  animation: red-rise 400ms var(--ease-smooth-out) 200ms both;
+}
