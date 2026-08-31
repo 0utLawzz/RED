@@ -3,11 +3,18 @@
 # RED
 ### Audio cutter — OutLawZ Edition
 
+[![Live](https://img.shields.io/badge/Live-red--biominute.vercel.app-C44536?style=flat)](https://red-biominute.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB.svg)](https://react.dev/)
 
 *Cut long MP3 mixes into named songs in the browser. Split, trim, and download — nothing leaves this device.*
+
+[Open the app](https://red-biominute.vercel.app) · [Install & run](INSTALL.md)
+
+<br />
+
+<img src="public/og.jpg" alt="RED — Cut long mixes into songs" width="800" />
 
 </div>
 
@@ -23,6 +30,19 @@
 - **ZIP the whole set** in one click
 - **On-device encoding** with lamejs — audio never uploads
 
+## Quick start
+
+```bash
+git clone https://github.com/0utLawzz/RED.git
+cd RED
+npm install
+npm run dev
+```
+
+Open the URL Vite prints, drop a mix, split it, download the songs.
+
+Full steps, keyboard map, build, deploy, and troubleshooting: **[INSTALL.md](INSTALL.md)**.
+
 ## Keyboard
 
 | Key | Action |
@@ -32,22 +52,6 @@
 | ← / → | Nudge 1s (Shift = 5s) |
 | Home / End | Jump to crop start / end |
 | Delete | Remove the selected split |
-
-## Run locally
-
-```bash
-git clone https://github.com/0utLawzz/RED.git
-cd RED
-npm install
-npm run dev
-```
-
-Then open the URL Vite prints. Drop a mix, split it, download the songs.
-
-```bash
-npm run build
-npm run typecheck
-```
 
 ## How it works
 
